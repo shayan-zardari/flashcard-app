@@ -1,8 +1,9 @@
-# Naulitus Flashcard App
 
 <div align="center" max-width="70px" aspect-ratio="1">
 	<img src="https://svgshare.com/i/19Qj.svg">
 </div>
+
+<h1 align="center">Naitilus Flashcard App</h1>
 
 Welcome to the Naulitus Flashcard App! Our app is designed to help you study and memorize information efficiently through customizable flashcards.
 
