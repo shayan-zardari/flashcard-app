@@ -1,5 +1,5 @@
 
-<div align="center" max-width="70px" aspect-ratio="1">
+<div align="center" width="70px" aspect-ratio="1">
 	<img src="https://svgshare.com/i/19Qj.svg">
 </div>
 
