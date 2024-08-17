@@ -1,6 +1,6 @@
 
-<div align="center" width="70px" height="auto" aspect-ratio="1">
-	<img src="https://svgshare.com/i/19Qj.svg">
+<div align="center" >
+	<img width="70px" height="auto" aspect-ratio="1" src="https://svgshare.com/i/19Qj.svg">
 </div>
 
 <h1 align="center">Naitilus Flashcard App</h1>
