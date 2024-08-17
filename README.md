@@ -5,7 +5,7 @@
 
 <h1 align="center">Naitilus Flashcard App</h1>
 
-Welcome to the Naulitus Flashcard App! Our app is designed to help you study and memorize information efficiently through customizable flashcards.
+Welcome to the Nautilus Flashcard App! Our app is designed to help you study and memorize information efficiently through customizable flashcards.
 
 ## Features
 
@@ -29,19 +29,11 @@ For detailed instructions on using the app, please refer to our [User Guide](lin
 
 ## Support
 
-If you need assistance, please contact our support team at [support@naulitus.com](mailto:support@naulitus.com).
+If you need assistance, please contact our support team at [support@nautilus.com](mailto:info@nautilus.com).
 
 ## Feedback
 
-We'd love to hear from you! Share your feedback or feature requests at [feedback@naulitus.com](mailto:feedback@naulitus.com).
-
-## Follow Us
-
-Stay updated with the latest news and updates by following us on social media:
-
-- [Facebook](https://facebook.com/naulitus)
-- [Twitter](https://twitter.com/naulitus)
-- [Instagram](https://instagram.com/naulitus)
+We'd love to hear from you! Share your feedback or feature requests at [feedback@nautilus.com](mailto:info@nautilus.com).
 
 ## Privacy Policy
 
@@ -55,4 +47,4 @@ Thank you for choosing Naulitus! We hope our app enhances your learning experien
 
 ---
 
-© 2024 Naulitus. All rights reserved.
+© 2024 Nautilus. All rights reserved.
