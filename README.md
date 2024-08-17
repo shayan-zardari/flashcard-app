@@ -1,6 +1,6 @@
 # Naulitus Flashcard App
 
-![Naulitus Logo](https://svgshare.com/s/19Qj) 
+![Naulitus Logo](https://svgshare.com/i/19Qj.svg) 
 
 Welcome to the Naulitus Flashcard App! Our app is designed to help you study and memorize information efficiently through customizable flashcards.
 
