@@ -22,8 +22,8 @@ function Home() {
         <Toolbar style={{display: "flex", color: '#fff'}}>
           <Typography variant="h5" style={{flexGrow: 1}}>Nautilus</Typography>
           <SignedOut>
-            <Button color="inherit" sx={{bgcolor: "#2F60DD", padding: '10px', margin: '5px'}}>Log In</Button>
-            <Button color="inherit" sx={{bgcolor: "#2F60DD", padding: '10px', margin: '5px'}}>Sign Up</Button> 
+            <Button href="/sign-in" color="inherit" sx={{bgcolor: "#2F60DD", padding: '10px', margin: '5px'}}>Log In</Button>
+            <Button href="/sign-up" color="inherit" sx={{bgcolor: "#2F60DD", padding: '10px', margin: '5px'}}>Sign Up</Button> 
           </SignedOut>
           <SignedIn>
             <UserButton/>

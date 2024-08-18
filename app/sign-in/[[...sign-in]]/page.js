@@ -1,8 +1,10 @@
-import { Container, AppBar, Toolbar } from "@mui/material";
+
+import { SignIn } from "@clerk/clerk-react";
+import { Container, AppBar, Toolbar, Box, Typography, Button} from "@mui/material";
 
 export default function SignInPage() {
     return 
-    <Container maxWidth="">
+    <Container maxWidth="100vw">
         <Appbar position="static">
             <Toolbar>
                 <Typography variant="h6" sx={{
