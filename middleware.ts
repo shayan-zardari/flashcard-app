@@ -1,6 +1,5 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
 
 export const config = {
   matcher: [
@@ -10,3 +9,4 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 };
+  export default clerkMiddleware;

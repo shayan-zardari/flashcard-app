@@ -1,10 +1,13 @@
-import Image from "next/image";   
-import { getStripe } from "/utils/get-stripe"
-import { SingedIn, SingedOut, UserButton } from "@clerk/nextjs"
-import { Container, Head } from "@mui/system";
-import { Typography, AppBar, Toolbar, Button } from "@mui/material";
+"use client"
 
-export default function Home() {
+// import Image from "next/image";   
+// import { getStripe } from "/utils/get-stripe"
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+// import { Container } from "@mui/system";
+import { Container, Typography, AppBar, Toolbar, Button } from "@mui/material";
+import Head from "next/head";
+
+function Home() {
   return (  
     <Container maxWidth="100vw">
       <Head>
@@ -15,15 +18,17 @@ export default function Home() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" style={{flexgrow: 1}}>Flashcard Saas</Typography>
-          <SingedOut>
+          <SignedOut>
             <Button color="inherit">Log In</Button>
             <Button color="inherit"  >Sign Up</Button> 
-          </SingedOut>
-          <SingedIn>
+          </SignedOut>
+          <SignedIn>
             <UserButton />
-          </SingedIn>
+          </SignedIn>
         </Toolbar>
       </AppBar>
     </Container>
   );
 }
+
+export default Home;
