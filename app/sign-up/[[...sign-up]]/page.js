@@ -3,9 +3,9 @@ import { SignUp } from "@clerk/clerk-react";
 import { Container, AppBar, Toolbar, Button, Typography, Box} from "@mui/material";
 
 export default function SignUpPage() {
-    return 
+    return (
     <Container maxWidth="100vw">
-        <Appbar position="static">
+        <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" sx={{
                     flexGrow:1,
@@ -13,9 +13,9 @@ export default function SignUpPage() {
                     Nautilus                      
                 </Typography>  
             </Toolbar>
-            <Button color="inherit"><Link href="/sign-in" passhref>log In</Link ></Button>
-            <Button color="inherit"><Link href="/sign-  up" passhref>Sign Up</Link ></Button>  
-        </Appbar>
+            <Button color="inherit"><Link href="/sign-in" passHref>log In</Link ></Button>
+            <Button color="inherit"><Link href="/sign-  up" passHref>Sign Up</Link ></Button>  
+        </AppBar>
 
         <Box 
             display="flex"
@@ -29,4 +29,4 @@ export default function SignUpPage() {
             </Typography>
         </Box>
     </Container>
-}
+)}
