@@ -3,7 +3,6 @@
   
 import { getStripe } from "/utils/get-stripe"
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
-// import { Container } from "@mui/system";
 import { Container, Typography, AppBar, Toolbar, Button, Box } from "@mui/material";
 import Head from "next/head";
 import { Ribeye } from "next/font/google";
@@ -34,8 +33,8 @@ function Home() {
       <Box  
         sx={{
             backgroundImage: 'url(https://svgshare.com/i/19QR.svg)',
-            backgroundSize: 'cover',          // Ensures the image covers the entire container
-            backgroundRepeat: 'no-repeat',    // Prevents the image from repeating
+            backgroundSize: 'cover',       
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center', 
           }}
         height="800px"
