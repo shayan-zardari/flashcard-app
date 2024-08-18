@@ -11,6 +11,7 @@ Please follow these guidelines:
 2. The answer should be accurate and complete.
 3. Include relevant details and context if necessary to enhance understanding.
 4. Format the flashcards in a way that is easy to read and study.
+5. Only generate 10 flashcards.
 
 For example, if the provided content is about historical events, you might create a flashcard with a question like "What year did the American Revolution begin?" and the answer "1775."
 
@@ -28,7 +29,7 @@ Return in the following JASON format:
 `
 
 export async function POST(req){
-    const openai = OpenAI()
+    const openai = new OpenAI()
     const data = await req.text()
     const completion = await openai().chat.completion.create({
         messages:[
