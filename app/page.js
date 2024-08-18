@@ -8,21 +8,22 @@ import { Container, Typography, AppBar, Toolbar, Button, Box } from "@mui/materi
 import Head from "next/head";
 import { Ribeye } from "next/font/google";
 import { calculateBackoffMillis } from "@firebase/util";
+import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/app-router";
 
 function Home() {
   return (  
-    <Container maxWidth="100vw">
+    <Container maxWidth="100vw" sx={{padding: 0}}>
       <Head>
         <title>Flashcard Saas</title>
         <meta name="description" content="Create Flashcard from Saas"  />
       </Head>
 
-      <AppBar position="static" style={{ width: '100%', padding: 0 }}>
-        <Toolbar style={{display: "flex", marginRight: 50, marginLeft: 50,}}>
-          <Typography variant="h6" style={{flexGrow: 1}}>Flashcard Saas</Typography>
+      <AppBar position="static" style={{ width: '100%'}}>
+        <Toolbar style={{display: "flex", color: '#fff'}}>
+          <Typography variant="h5" style={{flexGrow: 1}}>Nautilus</Typography>
           <SignedOut>
-            <Button color="inherit">Log In</Button>
-            <Button color="inherit">Sign Up</Button> 
+            <Button color="inherit" sx={{bgcolor: "#2F60DD", padding: '10px', margin: '5px'}}>Log In</Button>
+            <Button color="inherit" sx={{bgcolor: "#2F60DD", padding: '10px', margin: '5px'}}>Sign Up</Button> 
           </SignedOut>
           <SignedIn>
             <UserButton/>
@@ -31,14 +32,33 @@ function Home() {
       </AppBar>
 
       <Box  
+        sx={{
+            backgroundImage: 'url(https://svgshare.com/i/19QR.svg)',
+            backgroundSize: 'cover',          // Ensures the image covers the entire container
+            backgroundRepeat: 'no-repeat',    // Prevents the image from repeating
+            backgroundPosition: 'center', 
+          }}
+        height="800px"
         width="100vw" 
         display="flex" 
         flexDirection="column" 
         justifyContent="center" 
         alignItems="center"
         >
-        <Typography variant="h2">Your study partner Nautius Card</Typography>
-        <Typography variant="h5">
+        <Typography variant="h1"
+          sx={{
+            color: 'white',
+            padding: '20px',
+            textAlign: 'center',
+          }}
+          >
+          Your study partner Nautius Card</Typography>
+        <Typography variant="h5"
+          sx={{
+            color: 'white',
+            padding: '20px',
+          }}
+          >
           {' '}
           the easiest way to create flashcards.
         </Typography>
@@ -46,7 +66,9 @@ function Home() {
       </Box>
 
       <Box>
-        
+        <Typography variant="h2">Feature 1</Typography>
+        <Typography variant="h2">Feature 2</Typography>
+        <Typography variant="h2">Feature 3</Typography>
       </Box>
 
     </Container>
