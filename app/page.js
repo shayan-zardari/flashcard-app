@@ -51,7 +51,7 @@ function Home() {
             textAlign: 'center',
           }}
           >
-          Your study partner Nautius Card</Typography>
+          Your study partner Nautilus Card</Typography>
         <Typography variant="h5"
           sx={{
             color: 'white',
