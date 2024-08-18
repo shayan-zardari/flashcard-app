@@ -1,5 +1,5 @@
 import Image from "next/image";   
-import { getStripe } from "@/utils/get-stripe"
+import { getStripe } from "/utils/get-stripe"
 import { SingedIn, SingedOut, UserButton } from "@clerk/nextjs"
 import { Container, Head } from "@mui/system";
 import { Typography, AppBar, Toolbar, Button } from "@mui/material";
