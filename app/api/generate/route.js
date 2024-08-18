@@ -1,3 +1,5 @@
+"use client";
+
 import { NextResponse } from "next/server";
 import OpenAI   from "openai";
 
@@ -24,7 +26,6 @@ Return in the following JASON format:
     ] 
 }
 `
-
 
 export async function POST(req){
     const openai = OpenAI()
