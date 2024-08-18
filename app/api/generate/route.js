@@ -32,11 +32,11 @@ export async function POST(req){
     const data = await req.text()
     const completion = await openai().chat.completion.create({
         messages:[
-            {role: 'system', content: systemPrompt}
+            {role: 'system', content: systemPrompt},
             {role: 'user', content: data  }
         ],
         model: 'gpt-4o',
-        response_format: {type: 'jason-object'}
+        response_format: {type: 'json-object'}
     })
 
     const flashcards = JSON.parse(completion.choices[0].messages.content)
