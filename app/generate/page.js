@@ -1,9 +1,9 @@
 "use client"
 import { useUser } from "@clerk/nextjs"
-import { async } from "@firebase/util"
+
 import { getDoc, writeBatch, doc, collection, setDoc } from "firebase/firestore"
 import { useState } from "react" 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { db } from '/firebase' 
 import { Container, TextField, Box, Paper, Typography, Button, Grid, Card, CardActionArea, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 
@@ -95,7 +95,7 @@ export default function Generate() {
                     mb: 2,
                 }}/>
                 <Button
-                    variant="contianed"
+                    variant="contained"
                     color="primary"
                     onClick={handleSubmit}
                     fullWidth
@@ -111,7 +111,7 @@ export default function Generate() {
             <Box sx={{mt: 4}}>
                 <Typography variant="h5">Flashcards Preview</Typography>
                 <Grid container spacing={3}>
-                    {flashcards.map((flashcards, index) => {
+                    {flashcards.map((flashcard, index) => {
                         <Grid item xs={12} sm={6} md={4} key={index}>
                             <Card>
                                 <CardActionArea
