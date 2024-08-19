@@ -17,7 +17,7 @@ export default function Generate() {
     const router = useRouter()
 
     const handleSubmit = async () => {
-        fetch('/api/generate/route', {
+        fetch('/api/generate', {
             method: "POST",
             body: text,
         }) 
