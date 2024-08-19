@@ -73,7 +73,7 @@ export default function Generate() {
         router.push('/flashcards')
     }
 
-    return 
+    return (
     <Container maxWidth="md">
         <Box sx={{
             mt: 4,
@@ -198,5 +198,5 @@ export default function Generate() {
             </DialogActions>
         </Dialog>
     </Container>
-}}
+)}}
  
