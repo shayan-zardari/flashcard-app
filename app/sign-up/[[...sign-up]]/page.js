@@ -1,6 +1,6 @@
-
-import { SignUp } from "@clerk/clerk-react";
-import { Container, AppBar, Toolbar, Button, Typography, Box} from "@mui/material";
+import Link from 'next/link';
+import { SignUp } from "@clerk/nextjs";
+import { Container, AppBar, Toolbar, Box, Typography, Button} from "@mui/material";
 
 export default function SignUpPage() {
     return (
@@ -12,9 +12,9 @@ export default function SignUpPage() {
                 }}>
                     Nautilus                      
                 </Typography>  
+                <Button color="inherit"><Link href="/sign-in" passHref>log In</Link ></Button>
+                <Button color="inherit"><Link href="/sign-  up" passHref>Sign Up</Link ></Button>  
             </Toolbar>
-            <Button color="inherit"><Link href="/sign-in" passHref>log In</Link ></Button>
-            <Button color="inherit"><Link href="/sign-  up" passHref>Sign Up</Link ></Button>  
         </AppBar>
 
         <Box 
@@ -25,7 +25,7 @@ export default function SignUpPage() {
             >
             <Typography variant="h4">
                 Sign Up
-                <SignUp   />
+                <SignUp />
             </Typography>
         </Box>
     </Container>
