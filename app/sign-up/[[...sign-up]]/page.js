@@ -13,7 +13,7 @@ export default function SignUpPage() {
                     Nautilus                      
                 </Typography>  
                 <Button color="inherit"><Link href="/sign-in" passHref>log In</Link ></Button>
-                <Button color="inherit"><Link href="/sign-  up" passHref>Sign Up</Link ></Button>  
+                <Button color="inherit"><Link href="/sign-up" passHref>Sign Up</Link ></Button>  
             </Toolbar>
         </AppBar>
 
