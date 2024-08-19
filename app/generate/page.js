@@ -22,7 +22,8 @@ export default function Generate() {
             body: text,
         }) 
         .then((res) => res.json())
-        .then((data) => setFlashcards(data)) 
+        .then((data) => setFlashcards(data))
+    } 
 
     const handleCardClick = (id) => {
         setFlipped(prev => ({ 
@@ -197,5 +198,5 @@ export default function Generate() {
             </DialogActions>
         </Dialog>
     </Container>
-)}}
+)}
  

@@ -34,13 +34,14 @@ export async function POST(req){
     const completion = await openai().chat.completions.create({
         messages:[
             {role: 'system', content: systemPrompt},
-            {role: 'user', content: data  }
+            {role: 'user', content: data}
         ],
         model: 'gpt-4o',
         response_format: {type: 'json-object'}
     })
 
+    console.log(completion.choices[0].messages.content)
     const flashcards = JSON.parse(completion.choices[0].messages.content)
 
-    return NextResponse.jason(flashcards.flashcards)
+    return NextResponse.json(flashcards.flashcards)
 }
