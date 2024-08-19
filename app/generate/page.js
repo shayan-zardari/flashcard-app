@@ -5,8 +5,7 @@ import { getDoc, writeBatch, doc, collection, setDoc } from "firebase/firestore"
 import { useState } from "react" 
 import { useRouter } from 'next/router'
 import { db } from '/firebase' 
-import { Roboto_Flex } from "next/font/google"
-import { Container, Textfeild, Box, Paper, Typography} from "@mui/material"
+import { Container, TextField, Box, Paper, Typography, Button, Grid, Card, CardActionArea, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 
 export default function Generate() {
     const { isLoaded, isSignedIn, user } = useUser()
@@ -15,10 +14,10 @@ export default function Generate() {
     const [text, setText] = useState('') 
     const [name, setName] = useState('')
     const [open, setOpen] = useState(false)
-    const router = useRouter
+    const router = useRouter()
 
     const handleSubmit = async () => {
-        fetch('api/generate', {
+        fetch('/api/generate/route', {
             method: "POST",
             body: text,
         }) 
@@ -84,19 +83,19 @@ export default function Generate() {
         }}>
             <Typography variant="h4">Generate Flashcards</Typography>
             <Paper sx={{p:4, width: '100%'}}>
-                <Textfeild 
+                <TextField 
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 label="Enter text"
                 fullWidth
                 multiline
                 rows={4}
-                varant= 'outlined'
+                variant= 'outlined'
                 sx={{
                     mb: 2,
                 }}/>
                 <Button
-                    variant="contianted"
+                    variant="contianed"
                     color="primary"
                     onClick={handleSubmit}
                     fullWidth
@@ -177,7 +176,7 @@ export default function Generate() {
         )}
 
         <Dialog open={open} onClose={handleClose}>
-            <DialofTitle>Save Flashcards</DialofTitle>
+            <DialogTitle>Save Flashcards</DialogTitle>
             <DialogContent>
                 <DialogContentText>
                     Please enter a name for the flashcard collection
