@@ -2,7 +2,7 @@
 
 import { getStripe } from "/utils/get-stripe"
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
-import { Container, Typography, AppBar, Toolbar, Button, Box } from "@mui/material";
+import { Container, Typography, AppBar, Toolbar, Button, Box, Grid } from "@mui/material";
 import Head from "next/head";
 import { Ribeye } from "next/font/google";
 import { calculateBackoffMillis } from "@firebase/util";
@@ -95,6 +95,42 @@ function Home() {
         <Typography variant="h2">Feature 3</Typography>
       </Box>
 
+      <Box display="flex" flexDireciton="row" justifyContent="center" alignItems="center">
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          justifyContent="center" 
+          alignItems="center"
+          border="2px solid #333"
+          borderRadius="2px" 
+          sx={{m: 4, p: 4, borderRadius: 2}}>
+          <Typography variant="h4">
+            Our standard plan.
+          </Typography>
+          <Typography variant="h4">
+            {''}
+            $0 / Month
+          </Typography>
+          <Button contained color="inherit" sx={{m:2, border: 1}}>Buy</Button>
+        </Box>
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          justifyContent="center" 
+          alignItems="center"
+          border="2px solid #333"
+          borderRadius="2px" 
+          sx={{m: 4, p: 4, borderRadius: 2}}>
+          <Typography variant="h4">
+            Our premium plan.
+          </Typography>
+          <Typography variant="h4">
+            {''}
+            $10 / Month
+          </Typography>
+          <Button contained color="inherit" sx={{m:2, border: 1}} onClick={handleSubmit}>Buy</Button>
+        </Box>
+      </Box>
     </Container>
   );
 }
