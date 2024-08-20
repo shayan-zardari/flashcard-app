@@ -7,7 +7,7 @@ import Head from "next/head";
 import { Ribeye } from "next/font/google";
 import { calculateBackoffMillis } from "@firebase/util";
 import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/app-router";
-import { POST } from "./api/checkout_sessions/route";
+import { POST } from "./api/checkout_session/route";
 
 function Home() {
 
