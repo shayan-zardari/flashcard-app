@@ -7,8 +7,34 @@ import Head from "next/head";
 import { Ribeye } from "next/font/google";
 import { calculateBackoffMillis } from "@firebase/util";
 import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/app-router";
+import { POST } from "./api/checkout_sessions/route";
 
 function Home() {
+
+  const handleSubmit = async () => {
+    const checkoutSession  = await fetch("/api/checkout_sessions", {
+      method: 'POST',
+      headers: {
+        origin: 'https//localhost:3000',
+      },
+    }) 
+    const checkoutSessionJson = await checkoutSession.json()   
+
+    if (checkoutSession.statusCode === 500) {
+      console.error(checkoutSession.message)
+      return  
+    }
+
+    const stripe = await getStripe()
+    const {error} = await stripe.redirectToCheckout({
+      sessionId: checkoutSessionJson.id, 
+    })
+
+    if (error) {
+      console.warn(error.message )
+    }
+  }
+
   return (  
     <Container maxWidth="100vw" sx={{padding: 0}}>
       <Head>
