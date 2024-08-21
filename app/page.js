@@ -1,18 +1,19 @@
 "use client"
 
-import { getStripe } from "/utils/get-stripe"
+
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { Container, Typography, AppBar, Toolbar, Button, Box, Grid } from "@mui/material";
 import Head from "next/head";
-import { Ribeye } from "next/font/google";
-import { calculateBackoffMillis } from "@firebase/util";
-import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/app-router";
-import { POST } from "./api/checkout_session/route";
+// import { Ribeye } from "next/font/google";
+// import { calculateBackoffMillis } from "@firebase/util";
+// import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/app-router";
+// import { POST } from "./api/checkout_session/route";
+import getStripe from "../utils/get-stripe";
 
 function Home() {
 
   const handleSubmit = async () => {
-    const checkoutSession  = await fetch("/api/checkout_sessions", {
+    const checkoutSession  = await fetch("/api/checkout_session", {
       method: 'POST',
       headers: {
         origin: 'https//localhost:3000',
