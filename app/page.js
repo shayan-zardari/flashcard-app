@@ -38,12 +38,12 @@ function Home() {
 
   return (  
     <Container maxWidth="100vw" sx={{padding: 0}}>
-      <Head>
+      {/* <Head>
         <title>Flashcard Saas</title>
         <meta name="description" content="Create Flashcard from Saas"  />
-      </Head>
+      </Head> */}
 
-      <AppBar position="static" style={{ width: '100%'}}>
+      <AppBar position="static" style={{ width: '100vw'}}>
         <Toolbar style={{display: "flex", color: '#fff'}}>
           <Typography variant="h5" style={{flexGrow: 1}}>Nautilus</Typography>
           <SignedOut>
@@ -87,13 +87,62 @@ function Home() {
           {' '}
           the easiest way to create flashcards.
         </Typography>
-        <Button variant="contained" color="primary" sx={{mt: 2}}>Start Now</Button>
+        <Button variant="contained" color="primary" sx={{mt: 2}} href="http://localhost:3000/generate">Start Now</Button>
       </Box>
 
-      <Box>
-        <Typography variant="h2">Feature 1</Typography>
-        <Typography variant="h2">Feature 2</Typography>
-        <Typography variant="h2">Feature 3</Typography>
+      <Box display="flex" flexDireciton="row" justifyContent="center" alignItems="center">
+        
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          justifyContent="center" 
+          alignItems="center"
+          border="2px solid #333"
+          borderRadius="2px" 
+          sx={{m: 4, p: 4, borderRadius: 2}}>
+          <Typography variant="h3" textAlign="center">
+          Receive exactly 10 flashcards.
+          </Typography>
+          <Typography variant="h6" textAlign="center">
+            {''}
+            Optimize your study sessions with precisely 10 expertly crafted flashcards. Perfect for quick reviews and focused learning.
+          </Typography>
+        </Box>
+
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          justifyContent="center" 
+          alignItems="center"
+          border="2px solid #333"
+          borderRadius="2px" 
+          sx={{m: 4, p: 4, borderRadius: 2}}>
+          <Typography variant="h3" textAlign="center">
+            Effort less Flashcard creation.
+          </Typography>
+          <Typography variant="h6" textAlign="center">
+            {''}
+            Just provide your content, and our advanced AI will generate clear, concise, and informative flashcards designed for effective learning and study.
+          </Typography>
+        </Box>
+
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          justifyContent="center" 
+          alignItems="center"
+          border="2px solid #333"
+          borderRadius="2px" 
+          sx={{m: 4, p: 4, borderRadius: 2}}>
+          <Typography variant="h3" textAlign="center">
+            Customize the cards.
+          </Typography>
+          <Typography variant="h6" textAlign="center">
+            {''}
+            Get flashcards tailored to your needs. Our AI not only generates questions and answers but also includes context and relevant details to ensure you grasp the material fully.
+          </Typography>
+        </Box>
+
       </Box>
 
       <Box display="flex" flexDireciton="row" justifyContent="center" alignItems="center">
