@@ -7,3 +7,7 @@ body {
   width: 100vw;
   padding: 0;
 }
+
+body {
+  overflow-x: hidden;
+}
