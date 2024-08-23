@@ -3,7 +3,7 @@
 import { useUser } from "@clerk/nextjs"
 import { useEffect, useState } from "react"
 import { collection, doc, getDocs } from "firebase/firestore"
-import { db } from "@/firebase"
+import { db } from "../../firebase"
 import { useSearchParams } from "next/navigation"
 import { Container, TextField, Box, Paper, Typography, Button, Grid, Card, CardActionArea, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 

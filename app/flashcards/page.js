@@ -3,10 +3,11 @@
 import { useUser } from "@clerk/nextjs"
 import { useEffect, useState } from "react"
 import { doc, getDoc, setDoc, collection    } from "firebase/firestore"
-import { db } from "firebase"
+import { db } from "../../firebase"
 import { useRouter } from "next/navigation"
 import { Router } from "next/router"
-import { flightRouterStateSchema } from "next/dist/server/app-render/types"
+import { Container, Typography, Card, CardActionArea, CardContent, Grid } from "@mui/material";
+
 
 export default function Flashcards() {
     const {isLoaded, isSignedIn, user} = useUser()
@@ -38,7 +39,7 @@ export default function Flashcards() {
         Router.push(`/flashcards?id=${id}`)
     }
 
-    return <Containter maxWidth="100vw">
+    return <Container maxWidth="100vw">
         <Grid container spacing={3} sx={{
             mt:4,
         }}>
@@ -48,7 +49,7 @@ export default function Flashcards() {
                         <CardActionArea onClick={()=>{handleCardClick(flashcard.name)}}>
                             <CardContent>
                                 <Typography variant="h6">
-                                    {flashcard.name}
+                                    {flashcards.name}
                                 </Typography>  
                             </CardContent>
                         </CardActionArea>
@@ -56,5 +57,5 @@ export default function Flashcards() {
                 </Grid>  
             })}
         </Grid>
-    </Containter>      
+    </Container>      
 }

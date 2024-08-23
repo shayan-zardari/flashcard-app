@@ -3,7 +3,7 @@ import { useUser } from "@clerk/nextjs";
 import { getDoc, writeBatch, doc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { db } from "/firebase";
+import { db } from "../../firebase";
 import {
   Container,
   TextField,
@@ -40,7 +40,7 @@ export default function Generate() {
     try {
       const response = await fetch("/api/generate", {
         method: "POST",
-        body: "",
+        body: JSON.stringify({ content: text }), 
         headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
@@ -71,7 +71,7 @@ export default function Generate() {
       alert("Please enter a name");
       return;
     }
-
+    
     const batch = writeBatch(db);
     const userDocRef = doc(collection(db, "users"), user.id);
     const docSnap = await getDoc(userDocRef);
