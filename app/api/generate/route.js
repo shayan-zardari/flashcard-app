@@ -1,5 +1,3 @@
-"use client";
-
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -17,7 +15,7 @@ For example, if the provided content is about historical events, you might creat
 
 Start by processing the given content and generating the flashcards accordingly.
 
-Return in the following JASON format:
+Return in the following json format:
 {
     "flashcards":[
         {
@@ -28,21 +26,34 @@ Return in the following JASON format:
 }
 `
 
-export async function POST(req){
+export async function POST(req) {
+    const data = await req.text();
     const openai = new OpenAI()
-    const data = await req.text()
-    const completion = await openai().chat.completions.create({
-        messages:[
-            {role: 'system', content: systemPrompt},
-            {role: 'user', content: data}
+    console.log([{ role: 'system', content: systemPrompt },
+    { role: 'user', content: data }])
+
+    // return NextResponse.json({
+    //     message: "Hello World"
+    // })
+    const completion = await openai.chat.completions.create({
+        messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: data }
         ],
         model: 'gpt-4o',
-        response_format: {type: 'json-object'}
+        response_format: { type: 'json_object' }
     })
 
     // console.log(completion.choices[0].messages.content)
-
-    const flashcards = JSON.parse(completion.choices[0].messages.content)
+    console.log(completion.choices[0].message.content)
+    const flashcards = JSON.parse(completion.choices[0].message.content)
 
     return NextResponse.json(flashcards.flashcards)
 }
+
+// export async function POST(req){
+//     console.log("Hello World")
+//     return NextResponse.json({
+//         message: "Hello World"
+//     })
+// }
