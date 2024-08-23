@@ -82,10 +82,10 @@ export default function Generate() {
         alert("Flashcard collection with the same name already exists.");
         return;
       } else {
-        collections.push({ name });
+        collections.push({name});
         batch.set(
           userDocRef,
-          { flashcards, collections },
+          { flashcards:  collections },
           { merge: true }
         );
       }
@@ -94,10 +94,12 @@ export default function Generate() {
     }
 
     const colRef = collection(userDocRef, name);
+    // cricket collection
     flashcards.forEach((flashcard) => {
       const cardDocRef = doc(colRef);
       batch.set(cardDocRef, flashcard);
     });
+
     await batch.commit();
     handleClose();
     router.push("/flashcards");

@@ -4,10 +4,8 @@ import { useUser } from "@clerk/nextjs"
 import { useEffect, useState } from "react"
 import { doc, getDoc, setDoc, collection    } from "firebase/firestore"
 import { db } from "../../firebase"
-import { useRouter } from "next/navigation"
-import { Router } from "next/router"
 import { Container, Typography, Card, CardActionArea, CardContent, Grid } from "@mui/material";
-
+import { useRouter } from "next/navigation"
 
 export default function Flashcards() {
     const {isLoaded, isSignedIn, user} = useUser()
@@ -19,10 +17,11 @@ export default function Flashcards() {
             if (!user) return
             const docRef = doc(collection(db, 'users'), user.id)
             const docSnap = await getDoc(docRef)
-             
+            console.log(docSnap.data())             
             if (docSnap.exists()) {
                 const collections = docSnap.data().flashcards || []  
                 setFlashcards(collections)
+                console.log(collections)
             }
             else {
                 await setDoc(docRef, {flashcards: []})  
@@ -36,20 +35,20 @@ export default function Flashcards() {
     }
 
     const handleCardClick= (id) => {
-        Router.push(`/flashcards?id=${id}`)
+        router.push(`/flashcard?id=${id}`)
     }
 
     return <Container maxWidth="100vw">
         <Grid container spacing={3} sx={{
             mt:4,
         }}>
-            {flashcards.map((flashcards, index)=>{
-                <Grid item xs={12} sm={6} md={4} key={index}>
+            {flashcards.map((flashcard, index)=>{
+                return  <Grid item xs={12} sm={6} md={4} key={index}>
                     <Card>
                         <CardActionArea onClick={()=>{handleCardClick(flashcard.name)}}>
                             <CardContent>
                                 <Typography variant="h6">
-                                    {flashcards.name}
+                                    {flashcard.name}
                                 </Typography>  
                             </CardContent>
                         </CardActionArea>
